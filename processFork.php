@@ -3,10 +3,10 @@ pcntl_async_signals(true);
 // 进程数量扩展限制
 $iForkMaxWorker  = 3;
 $aPidArr = [];
-$iPid = pcntl_fork();
 while ($iForkMaxWorker > 0 && count($aPidArr) < 3) {
     $iRetry = 0;
     do {
+        $iPid = pcntl_fork();
         if ($iPid > 0) {
             $aPidArr[$pid] = $iPid;
             $iWaitRes = 0;
