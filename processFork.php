@@ -36,7 +36,7 @@ while ($iForkMaxWorker > 0 && count($aPidArr) < 3) {
         } elseif ($iPid === 0) {
             cli_set_process_title("child_".posix_getpid());
             echo "创建子进程$iForkMaxWorker".PHP_EOL;
-            sleep(1);
+            sleep(60);
             exit;
         }else {
             $iRetry++;
